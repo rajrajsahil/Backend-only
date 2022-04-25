@@ -41,9 +41,13 @@ namespace Techdome.API.Controllers
         }
 
         // POST api/<TodoController>
-        [HttpPost("create/{id}")]
-        public void Post([FromBody] string value)
+        [AllowAnonymous]
+        [HttpPost("register")]
+        public Member PostAsync([FromBody] Member newMeMber)
         {
+            Context.Config.Add(newMeMber);
+            Context.SaveChanges();
+            return newMeMber;
         }
 
         // DELETE api/<TodoController>/5
