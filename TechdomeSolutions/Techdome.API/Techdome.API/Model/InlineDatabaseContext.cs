@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static Techdome.API.Model.MyClass;
+using static Techdome.API.Model.Members;
 
 namespace Techdome.API.Model
 {
@@ -12,7 +12,7 @@ namespace Techdome.API.Model
         /*public InlineDatabaseContext(DbContextOptions options): base(options)
         {
         }*/
-        public DbSet<Member> Config { get; set; }
+        public DbSet<Members.Member> Config { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseInMemoryDatabase("MyDatabase");
